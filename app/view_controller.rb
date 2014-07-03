@@ -150,6 +150,8 @@ class ViewController < UIViewController
         end
       else
         # // Pause the task by canceling it and storing the resume data.
+
+        # rubymotion is crashing here:
         fdi.download_task.cancelByProducingResumeData -> (resumeData) do
           if resumeData.nil?
             fdi.task_resume_data = NSData.alloc.initWithData(resumeData)
